@@ -7,8 +7,6 @@
     "email": "hello@carbondigital.us",
     "url": "https://carbondigital.us/"
   },
-  "bin": {
-    "datasmyth": "./bin/run"
   "main": "./dist/index.js",
   },
   "devDependencies": {
@@ -31,6 +29,9 @@
     "open": "^7.0.0",
     "ora": "^4.0.3",
     "update-notifier": "^4.1.0"
+  },
+  "bin": {
+    "datasmyth": "./bin/run"
   },
   "engines": {
     "node": ">=16.0.0"
