@@ -8,6 +8,13 @@
   },
   "bin": {
     "dbdocs": "./bin/run"
+  "devDependencies": {
+    "@oclif/test": "2.1.1",
+    "chai": "^4",
+    "globby": "^10",
+    "mocha": "^5",
+    "nyc": "^14",
+    "oclif": "^3.2.0"
   },
   "dependencies": {
     "@dbml/core": "^2.4.4",
@@ -21,14 +28,6 @@
     "open": "^7.0.0",
     "ora": "^4.0.3",
     "update-notifier": "^4.1.0"
-  },
-  "devDependencies": {
-    "@oclif/test": "2.1.1",
-    "chai": "^4",
-    "globby": "^10",
-    "mocha": "^5",
-    "nyc": "^14",
-    "oclif": "^3.2.0"
   },
   "engines": {
     "node": ">=14.0.0"
