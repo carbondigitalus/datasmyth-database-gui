@@ -1,7 +1,7 @@
 {
-  "name": "dbdocs",
   "version": "0.7.3",
   "author": "@holistics",
+  "name": "datasmyth",
   "bin": {
     "dbdocs": "./bin/run"
   },
