@@ -34,7 +34,7 @@
     "datasmyth": "./bin/run"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=16.14.0"
   },
   "files": [
     "/bin",
