@@ -49,7 +49,7 @@
     "additionalHelpFlags": ["help"],
     "additionalVersionFlags": ["version"],
     "commands": "./src/commands",
-    "bin": "dbdocs",
+    "bin": "datasmyth",
     "plugins": [
       "@oclif/plugin-help"
     ],
