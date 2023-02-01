@@ -40,7 +40,7 @@
     "/bin",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json",
-    "/src"
+    "/dist"
   ],
   "keywords": [
     "oclif"
