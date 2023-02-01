@@ -62,7 +62,7 @@
       ]
     }
   },
-  "repository": "holistics/dbdocs",
+  "repository": "carbondigitalus/datasmyth",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "prepack": "oclif manifest",
