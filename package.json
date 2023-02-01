@@ -9,7 +9,8 @@
   },
   "main": "src/index.js",
   "bin": {
-    "dbdocs": "./bin/run"
+    "dbsmyth": "./bin/run"
+  },
   "devDependencies": {
     "@oclif/test": "2.1.1",
     "chai": "^4",
