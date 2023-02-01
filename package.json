@@ -122,10 +122,4 @@
     }
   },
   "repository": "carbondigitalus/datasmyth",
-  "scripts": {
-    "postpack": "rm -f oclif.manifest.json",
-    "prepack": "oclif manifest",
-    "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
-    "version": "oclif readme && git add README.md"
-  }
 }
