@@ -1,7 +1,11 @@
 {
-  "author": "@holistics",
   "name": "datasmyth",
   "version": "0.0.1",
+  "author": {
+    "name": "Carbon Digital",
+    "email": "hello@carbondigital.us",
+    "url": "https://carbondigital.us/"
+  },
   "bin": {
     "dbdocs": "./bin/run"
   },
