@@ -1,6 +1,7 @@
 {
   "name": "datasmyth",
   "version": "0.0.1",
+  "private": true,
   "author": {
     "name": "Carbon Digital",
     "email": "hello@carbondigital.us",
