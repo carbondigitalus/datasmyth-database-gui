@@ -7,6 +7,7 @@
     "email": "hello@carbondigital.us",
     "url": "https://carbondigital.us/"
   },
+  "main": "src/index.js",
   "bin": {
     "dbdocs": "./bin/run"
   "devDependencies": {
@@ -43,7 +44,6 @@
     "oclif"
   ],
   "license": "MIT",
-  "main": "src/index.js",
   "oclif": {
     "additionalHelpFlags": ["help"],
     "additionalVersionFlags": ["version"],
