@@ -8,6 +8,20 @@
     "url": "https://carbondigital.us/"
   },
   "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rm -rf ./lib/",
+    "cm": "cz",
+    "lint": "eslint ./src/ --fix",
+    "npm:publish": "npm run clean && npm run build && npm publish --access public",
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "oclif manifest",
+    "prepare": "husky install",
+    "semantic-release": "semantic-release",
+    "start:dev": "nodemon -L ./src/index.ts && tsc -w",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
+    "typecheck": "tsc --noEmit",
+    "version": "oclif readme && git add README.md"
   },
   "devDependencies": {
     "@oclif/test": "2.1.1",
