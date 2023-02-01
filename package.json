@@ -7,9 +7,9 @@
     "email": "hello@carbondigital.us",
     "url": "https://carbondigital.us/"
   },
-  "main": "src/index.js",
   "bin": {
     "datasmyth": "./bin/run"
+  "main": "./dist/index.js",
   },
   "devDependencies": {
     "@oclif/test": "2.1.1",
