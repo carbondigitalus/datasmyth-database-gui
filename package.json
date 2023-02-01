@@ -9,7 +9,7 @@
   },
   "main": "src/index.js",
   "bin": {
-    "dbsmyth": "./bin/run"
+    "datasmyth": "./bin/run"
   },
   "devDependencies": {
     "@oclif/test": "2.1.1",
