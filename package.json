@@ -78,6 +78,11 @@
   "bin": {
     "datasmyth": "./bin/run"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/@ryansonshine/cz-conventional-changelog"
+    }
+  },
   "engines": {
     "node": ">=16.14.0"
   },
