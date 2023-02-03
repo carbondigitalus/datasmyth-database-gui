@@ -1,20 +1,49 @@
 {
+  "name": "@datasmyth/database-schema",
+  "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "type-check": "tsc"
+  "author": {
+    "name": "Carbon Digital",
+    "email": "hello@carbondigital.us",
+    "url": "https://carbondigital.us/"
   },
-  "dependencies": {
-    "next": "latest",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+  "scripts": {
+    "start:dev": "next",
+    "build": "next build",
+    "start:prod": "next start",
+    "type-check": "tsc"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.1.0",
+    "prettier": "^2.3.2",
+    "sass": "^1.56.1",
     "typescript": "^4.8.3"
-  }
+  },
+  "dependencies": {
+    "@dbml/core": "^2.4.4",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.10",
+    "dotenv": "^8.2.0",
+    "next": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=16.14.0"
+  },
+  "type": "module"
 }
