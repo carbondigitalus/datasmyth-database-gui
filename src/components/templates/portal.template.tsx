@@ -1,15 +1,15 @@
 // NPM Modules
-import { Article, Construction, ContactSupport, Settings } from '@mui/icons-material';
 import BusinessIcon from '@mui/icons-material/Business';
-import ListAltIcon from '@mui/icons-material/ListAlt';
-import MicIcon from '@mui/icons-material/Mic';
-import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
-import TreeItem, { TreeItemProps, treeItemClasses } from '@mui/lab/TreeItem';
+import DatasetIcon from '@mui/icons-material/Dataset';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import TableViewIcon from '@mui/icons-material/TableView';
+import TreeItem from '@mui/lab/TreeItem';
 import TreeView from '@mui/lab/TreeView';
 import {
   AppBar,
   Avatar,
   Box,
+  Breadcrumbs,
   CssBaseline,
   Divider,
   Drawer,
@@ -17,11 +17,6 @@ import {
   IconButton,
   ImageListItem,
   Link,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
   Menu,
   MenuItem,
   SvgIcon,
@@ -94,6 +89,29 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
               <Typography variant='h6' noWrap component='div'>
                 {this.props.pageTitle}
               </Typography>
+              <Breadcrumbs
+                separator={<NavigateNextIcon fontSize='small' />}
+                aria-label='breadcrumb'
+                sx={{ color: 'white' }}
+              >
+                <Link underline='hover' sx={{ display: 'flex', alignItems: 'center' }} color='inherit' href='/'>
+                  <BusinessIcon sx={{ mr: 0.5 }} fontSize='inherit' />
+                  Organization
+                </Link>
+                <Link
+                  underline='hover'
+                  sx={{ display: 'flex', alignItems: 'center' }}
+                  color='inherit'
+                  href='/material-ui/getting-started/installation/'
+                >
+                  <DatasetIcon sx={{ mr: 0.5 }} fontSize='inherit' />
+                  Database
+                </Link>
+                <Typography sx={{ display: 'flex', alignItems: 'center' }}>
+                  <TableViewIcon sx={{ mr: 0.5 }} fontSize='inherit' />
+                  Table
+                </Typography>
+              </Breadcrumbs>
               <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                 <Tooltip title='DataSmyth Details'>
                   <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
