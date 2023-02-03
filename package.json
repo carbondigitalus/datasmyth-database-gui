@@ -7,7 +7,7 @@
     "email": "hello@carbondigital.us",
     "url": "https://carbondigital.us/"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/server.js",
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "clean": "rm -rf ./lib/",
@@ -18,12 +18,13 @@
     "prepack": "oclif manifest",
     "prepare": "husky install",
     "semantic-release": "semantic-release",
-    "start:dev": "nodemon -L ./src/index.ts && tsc -w",
+    "start:dev": "nodemon -L ./src/server.ts && tsc -w",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
     "typecheck": "tsc --noEmit",
     "version": "oclif readme && git add README.md"
   },
   "devDependencies": {
+    "@oclif/test": "2.1.1",
     "@ryansonshine/commitizen": "^4.2.8",
     "@ryansonshine/cz-conventional-changelog": "^3.3.4",
     "@semantic-release/git": "^10.0.1",
@@ -35,7 +36,6 @@
     "@types/react-dom": "^18.0.7",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
-    "@oclif/test": "2.1.1",
     "chai": "^4",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint": "^8.0.1",
@@ -51,6 +51,7 @@
     "jest": "^29.2.0",
     "lint-staged": "^13.0.3",
     "mocha": "^5",
+    "nodemon": "^2.0.20",
     "nyc": "^14",
     "oclif": "^3.2.0",
     "prettier": "^2.3.2",
@@ -110,8 +111,12 @@
   ],
   "license": "MIT",
   "oclif": {
-    "additionalHelpFlags": ["help"],
-    "additionalVersionFlags": ["version"],
+    "additionalHelpFlags": [
+      "help"
+    ],
+    "additionalVersionFlags": [
+      "version"
+    ],
     "commands": "./src/commands",
     "bin": "datasmyth",
     "plugins": [
@@ -181,5 +186,6 @@
       "@semantic-release/github"
     ]
   },
-  "repository": "carbondigitalus/datasmyth"
+  "repository": "carbondigitalus/datasmyth",
+  "type": "module"
 }
