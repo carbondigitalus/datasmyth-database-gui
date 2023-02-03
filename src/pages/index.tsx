@@ -11,5 +11,6 @@ const IndexPage = () => (
     </p>
   </Layout>
 )
+import PortalTemplate from 'components/templates/portal.template';
 
 export default IndexPage
