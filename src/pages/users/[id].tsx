@@ -1,61 +1,38 @@
-import { GetStaticProps, GetStaticPaths } from 'next'
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
-import { User } from '../../interfaces'
-import { sampleUserData } from '../../utils/sample-data'
-import Layout from '../../components/Layout'
-import ListDetail from '../../components/ListDetail'
+import PortalTemplate from 'components/templates/portal.template';
 
-type Props = {
-  item?: User
-  errors?: string
-}
-
-const StaticPropsDetail = ({ item, errors }: Props) => {
-  if (errors) {
+export default class UsersIDPage extends React.Component {
+  render() {
     return (
-      <Layout title="Error | Next.js + TypeScript Example">
-        <p>
-          <span style={{ color: 'red' }}>Error:</span> {errors}
-        </p>
-      </Layout>
-    )
-  }
-
-  return (
-    <Layout
-      title={`${
-        item ? item.name : 'User Detail'
-      } | Next.js + TypeScript Example`}
-    >
-      {item && <ListDetail item={item} />}
-    </Layout>
-  )
-}
-
-export default StaticPropsDetail
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  // Get the paths we want to pre-render based on users
-  const paths = sampleUserData.map((user) => ({
-    params: { id: user.id.toString() },
-  }))
-
-  // We'll pre-render only these paths at build time.
-  // { fallback: false } means other routes should 404.
-  return { paths, fallback: false }
-}
-
-// This function gets called at build time on server-side.
-// It won't be called on client-side, so you can even do
-// direct database queries.
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  try {
-    const id = params?.id
-    const item = sampleUserData.find((data) => data.id === Number(id))
-    // By returning { props: item }, the StaticPropsDetail component
-    // will receive `item` as a prop at build time
-    return { props: { item } }
-  } catch (err: any) {
-    return { props: { errors: err.message } }
+      <PortalTemplate pageTitle='Dashboard'>
+        <Box component='main' sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
+          <Toolbar />
+          <Typography paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Risus at ultrices mi
+            tempus imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus. Convallis convallis tellus id
+            interdum velit laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl
+            suscipit adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras. Metus
+            vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis imperdiet massa tincidunt.
+            Cras tincidunt lobortis feugiat vivamus at augue. At augue eget arcu dictum varius duis at consectetur
+            lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien faucibus et molestie ac.
+          </Typography>
+          <Typography paragraph>
+            Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla facilisi etiam
+            dignissim diam. Pulvinar elementum integer enim neque volutpat ac tincidunt. Ornare suspendisse sed nisi
+            lacus sed viverra tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis sed odio morbi.
+            Euismod lacinia at quis risus sed vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra
+            accumsan in. In hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
+            tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin nibh sit. Ornare
+            aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
+            posuere sollicitudin aliquam ultrices sagittis orci a.
+          </Typography>
+        </Box>
+      </PortalTemplate>
+    );
   }
 }
