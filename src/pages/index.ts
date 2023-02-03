@@ -1,1 +1,0 @@
-export { default as PortalPage } from './portal.page';
