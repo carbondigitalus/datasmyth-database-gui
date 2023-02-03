@@ -10,11 +10,7 @@
     "incremental": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -30,14 +26,6 @@
     "strictNullChecks": false,
     "target": "es6"
   },
-  "exclude": [
-    "node_modules",
-    "test"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "types/*.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["node_modules", "test"],
+  "include": ["next-env.d.ts", "types/*.d.ts", "**/*.ts", "**/*.tsx"]
 }
