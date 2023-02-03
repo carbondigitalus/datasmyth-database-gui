@@ -10,7 +10,7 @@ const verifyToken = require('../utils/verifyToken');
 const { getOrg } = require('../utils/org');
 const { shouldAskForFeedback } = require('../utils/feedback');
 const { isValidName } = require('../validators/projectName');
-const parse = require('../utils/parse');
+const parse = require('../logic/parse');
 
 async function build (project, authConfig) {
   const res = await axios.post(`${vars.apiUrl}/projects`, project, authConfig);
@@ -35,17 +35,11 @@ class BuildCommand extends Command {
     const spinner = ora({});
 
     try {
-      const authConfig = await verifyToken();
-
-      let { flags: { project, password } } = await this.parse(BuildCommand);
       const { args } = await this.parse(BuildCommand);
 
       const { filepath } = args;
       let content = '';
       content = fs.readFileSync(path.resolve(process.cwd(), filepath), 'utf-8');
-
-      const userOrg = await getOrg(authConfig);
-      const org = userOrg.name;
 
       // validate dbml syntax, get project name if it's already defined in the file
       spinner.text = 'Parsing file content';
