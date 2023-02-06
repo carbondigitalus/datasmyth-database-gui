@@ -70,37 +70,6 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
     }
   }
 
-  private async onLoadAccountRetrieve() {
-    const token = this.onLoadTokenCheck();
-    // @ts-ignore-next-line eslint-ignore-next-line
-    const res: AxiosResponse = await axios({
-      method: 'post',
-      url: `${process.env.REACT_APP_API_DOMAIN}/v1/account/`,
-      data: {
-        token
-      },
-      withCredentials: true
-    })
-      .then((res) => {
-        const newState = { account: res.data.data, isLoginActive: true };
-        this.setState(newState);
-      })
-      .catch((error) => {
-        console.log('Error Received:\n', error);
-        this.redirectIfUserNotFound();
-      });
-    return res.data;
-  }
-
-  private onLoadTokenCheck() {
-    const accessToken = localStorage.getItem('veterandb-token');
-    if (!accessToken) {
-      this.setState({ isLoginActive: false });
-      return window.location.assign('/login');
-    }
-    return accessToken;
-  }
-
   private openAccountMenu() {
     const element: HTMLElement = document.querySelector('#avatar-icon');
     return this.setState({ anchorEl: element, isMenuOpen: true });
