@@ -51,7 +51,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
 
   constructor(props: PageProps) {
     super(props);
-    this.state = { account: null, anchorEl: null, isLoginActive: false, isMenuOpen: false };
+    this.state = { anchorEl: null, data: null, isMenuOpen: false };
   }
 
   componentDidMount(): void {
