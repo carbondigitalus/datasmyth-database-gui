@@ -75,12 +75,6 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
     return this.setState({ anchorEl: element, isMenuOpen: true });
   }
 
-  private redirectIfUserNotFound() {
-    if (this.state.isLoginActive === false) {
-      window.location.assign('/login');
-    }
-    return;
-  }
 
   private setAuthToken(token: string) {
     if (token) {
