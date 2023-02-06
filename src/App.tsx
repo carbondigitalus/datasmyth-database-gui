@@ -1,26 +1,47 @@
+// NPM Modules
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Custom Modules
+import { AccountPage, PortalPage } from 'pages/portal';
+import { LoginPage, PasswordForgotPage, PasswordResetPage, RegisterPage } from 'pages/public';
+
+export default class App extends React.Component {
+  public router = createBrowserRouter([
+    {
+      path: '/',
+      element: <PortalPage />
+    },
+    {
+      path: '/account',
+      element: <AccountPage />
+    },
+    {
+      path: '/account/settings',
+      element: <PortalPage />
+    },
+    {
+      path: '/password-forgot',
+      element: <PasswordForgotPage />
+    },
+    {
+      path: '/login',
+      element: <LoginPage />
+    },
+    {
+      path: '/register',
+      element: <RegisterPage />
+    },
+    {
+      path: '/password-reset',
+      element: <PasswordResetPage />
+    }
+  ]);
+  render() {
+    return (
+      <div className='App'>
+        <RouterProvider router={this.router} />
+      </div>
+    );
+  }
 }
-
-export default App;
