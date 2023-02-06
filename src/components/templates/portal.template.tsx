@@ -41,9 +41,8 @@ export interface PageProps {
 }
 
 export interface PageState {
-  account: AccountDTO;
   anchorEl: HTMLElement | null;
-  isLoginActive: boolean;
+  data: any | null;
   isMenuOpen: boolean;
 }
 
