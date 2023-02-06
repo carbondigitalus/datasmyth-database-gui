@@ -36,16 +36,16 @@ import * as React from 'react';
 // Custom Modules
 import logo from './../../../src/assets/img/logo/logo.png';
 import icon from './../../../src/assets/img/logo/icon.png';
-import DatabaseContext from 'utils/context/database.context';
+import DatabaseContext from './../../utils/context/database.context';
 
 export interface PageProps {
   children: any;
+  data: any;
   pageTitle: string;
 }
 
 export interface PageState {
   anchorEl: HTMLElement | null;
-  data: any | null;
   isMenuOpen: boolean;
 }
 
@@ -54,17 +54,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
 
   constructor(props: PageProps) {
     super(props);
-    this.state = { anchorEl: null, data: null, isMenuOpen: false };
-  }
-
-  componentDidMount(): void {
-    this.getFile();
-  }
-
-  private getFile() {
-    const filePath = `${__dirname}/src/database/database.json`;
-    const parsedFile = readFileSync(filePath, 'utf-8');
-    return this.setState({ data: parsedFile });
+    this.state = { anchorEl: null, isMenuOpen: false };
   }
 
   private closeAccountMenu() {
@@ -128,7 +118,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
                     aria-haspopup='true'
                     aria-expanded={this.state.isMenuOpen ? 'true' : undefined}
                   >
-                    <Avatar src={icon} />
+                    <Avatar src='assets/img/icon.png' />
                   </IconButton>
                 </Box>
               </Tooltip>
@@ -194,7 +184,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
         >
           <Toolbar>
             <ImageListItem sx={{ width: '100%', paddingTop: '10px' }}>
-              <img src={logo} alt='DataSmyth Logo' loading='lazy' />
+              <img src='assets/img/logo.png' alt='DataSmyth Logo' loading='lazy' />
             </ImageListItem>
           </Toolbar>
           <Divider />
@@ -226,7 +216,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
             </ListItem>
           </List>
         </Drawer>
-        <DatabaseContext.Provider value={this.state.data}>
+        <DatabaseContext.Provider value={this.props.data}>
           <Grid container>
             <Grid item xs={10} sx={{ marginLeft: 'auto', marginRight: 'auto' }}>
               {this.props.children}
