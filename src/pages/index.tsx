@@ -1,14 +1,38 @@
+// Core Modules
+import * as fs from 'fs';
+
+// NPM Modules
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
+// Custom Modules
 import PortalTemplate from 'components/templates/portal.template';
+import DatabaseContext from 'utils/context/database.context';
 
-export default class IndexPage extends React.Component {
+interface PageProps {
+  data: any;
+}
+
+export function getStaticProps(context) {
+  const file = `${process.cwd()}/src/database/database.json`;
+  const database = fs.readFileSync(file, 'utf-8');
+  console.log('database\n', database);
+
+  return {
+    props: { data: database }
+  };
+}
+
+export default class IndexPage extends React.Component<PageProps> {
+  constructor(props: PageProps) {
+    super(props);
+  }
+
   render() {
     return (
-      <PortalTemplate pageTitle='Dashboard'>
+      <PortalTemplate pageTitle='Dashboard' data={this.props.data}>
         <Box component='main' sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
           <Toolbar />
           <Typography paragraph>
@@ -21,16 +45,7 @@ export default class IndexPage extends React.Component {
             Cras tincidunt lobortis feugiat vivamus at augue. At augue eget arcu dictum varius duis at consectetur
             lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien faucibus et molestie ac.
           </Typography>
-          <Typography paragraph>
-            Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla facilisi etiam
-            dignissim diam. Pulvinar elementum integer enim neque volutpat ac tincidunt. Ornare suspendisse sed nisi
-            lacus sed viverra tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis sed odio morbi.
-            Euismod lacinia at quis risus sed vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra
-            accumsan in. In hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-            tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin nibh sit. Ornare
-            aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-            posuere sollicitudin aliquam ultrices sagittis orci a.
-          </Typography>
+          <Typography paragraph>{this.props.data}</Typography>
         </Box>
       </PortalTemplate>
     );
