@@ -55,7 +55,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
   }
 
   componentDidMount(): void {
-    this.onLoadAccountRetrieve();
+    //
   }
 
   private closeAccountMenu() {
