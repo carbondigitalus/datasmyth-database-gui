@@ -1,8 +1,7 @@
 import { createTheme } from '@mui/material';
 
-const greenDark = '#556b2f';
-const greenDarkest = '#36421b';
-const sandLight = '#ece2c6';
+const darkNavy = '#0B0B45';
+const white = '#fff';
 
 const customTheme = createTheme({
   breakpoints: {
@@ -24,7 +23,7 @@ const customTheme = createTheme({
       styleOverrides: {
         // Name of the slot
         root: {
-          backgroundColor: greenDarkest,
+          backgroundColor: darkNavy,
           padding: '0'
         }
       }
@@ -46,7 +45,7 @@ const customTheme = createTheme({
         // Name of the slot
         root: {
           // Some CSS
-          borderColor: greenDarkest,
+          borderColor: darkNavy,
           padding: '1rem',
           margin: '1rem'
         }
@@ -81,8 +80,8 @@ const customTheme = createTheme({
       styleOverrides: {
         root: {
           // Some CSS
-          borderColor: greenDarkest,
-          color: greenDarkest
+          borderColor: darkNavy,
+          color: darkNavy
         }
       }
     },
@@ -102,8 +101,8 @@ const customTheme = createTheme({
       styleOverrides: {
         root: {
           // Some CSS
-          borderColor: greenDarkest,
-          color: greenDarkest
+          borderColor: darkNavy,
+          color: darkNavy
         }
       }
     },
@@ -111,8 +110,8 @@ const customTheme = createTheme({
       styleOverrides: {
         root: {
           // Some CSS
-          borderColor: greenDarkest,
-          color: greenDarkest
+          borderColor: darkNavy,
+          color: darkNavy
         }
       }
     },
@@ -120,7 +119,7 @@ const customTheme = createTheme({
       styleOverrides: {
         root: {
           // Some CSS
-          borderColor: greenDarkest
+          borderColor: darkNavy
         }
       }
     },
@@ -148,8 +147,8 @@ const customTheme = createTheme({
       styleOverrides: {
         root: {
           // Some CSS
-          borderColor: greenDarkest,
-          color: greenDarkest
+          borderColor: darkNavy,
+          color: darkNavy
         }
       }
     },
@@ -233,8 +232,8 @@ const customTheme = createTheme({
       700: 'hsl(185, 81%, 29%)',
       800: 'hsl(185, 84%, 25%)',
       900: 'hsl(184, 91%, 17%)',
-      main: greenDark,
-      dark: greenDarkest
+      main: darkNavy,
+      dark: darkNavy
     },
     // secondary: {
     //   50: '',
@@ -310,7 +309,7 @@ const customTheme = createTheme({
     },
     action: {},
     background: {
-      default: sandLight,
+      default: white,
       paper: ''
     }
   },
@@ -323,7 +322,7 @@ const customTheme = createTheme({
       textAlign: 'center'
     },
     h2: {
-      color: greenDarkest,
+      color: darkNavy,
       fontSize: '3rem',
       fontWeight: '500',
       padding: '20px',
