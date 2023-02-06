@@ -1,6 +1,6 @@
 {
-  "name": "veterandb-frontend",
-  "version": "0.0.15",
+  "name": "@datasmyth/database-gui",
+  "version": "0.0.1",
   "description": "",
   "private": false,
   "author": {
