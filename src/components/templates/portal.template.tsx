@@ -75,15 +75,6 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
     return this.setState({ anchorEl: element, isMenuOpen: true });
   }
 
-
-  private setAuthToken(token: string) {
-    if (token) {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    } else {
-      delete axios.defaults.headers.common['Authorization'];
-    }
-  }
-
   render() {
     if (this.state.isLoginActive === true) {
       return (
