@@ -76,7 +76,6 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
   }
 
   render() {
-    if (this.state.isLoginActive === true) {
       return (
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
@@ -235,7 +234,5 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
           <AccountContext.Provider value={this.state.account}>{this.props.children}</AccountContext.Provider>
         </Box>
       );
-    }
-    return <PortalSkeleton />;
   }
 }
