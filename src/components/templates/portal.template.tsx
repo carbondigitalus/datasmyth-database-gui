@@ -33,9 +33,11 @@ import * as React from 'react';
 // Custom Modules
 import { Project } from './../../utils/smythdb-core/Project';
 import { TableOptions } from 'utils/smythdb-core/TableOptions';
+import DatabaseContext from 'utils/context/database.context';
+import database from './../../database/database.json';
 export interface PageProps {
   children: any;
-  data: Project[];
+  data: any;
   pageTitle: string;
 }
 
@@ -85,7 +87,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
             >
               <Link underline='hover' sx={{ display: 'flex', alignItems: 'center' }} color='inherit' href='/'>
                 <BusinessIcon sx={{ mr: 0.5 }} fontSize='inherit' />
-                Organization
+                {database.projectName}
               </Link>
               <Link
                 underline='hover'
@@ -94,12 +96,12 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
                 href='/material-ui/getting-started/installation/'
               >
                 <DatasetIcon sx={{ mr: 0.5 }} fontSize='inherit' />
-                Database
+                {database.databaseType}
               </Link>
-              <Typography sx={{ display: 'flex', alignItems: 'center' }}>
+              {/* <Typography sx={{ display: 'flex', alignItems: 'center' }}>
                 <TableViewIcon sx={{ mr: 0.5 }} fontSize='inherit' />
                 Table
-              </Typography>
+              </Typography> */}
             </Breadcrumbs>
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
               <Tooltip title='DataSmyth Details'>
@@ -161,6 +163,9 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
               <MenuItem component={Link} href='https://datasmyth.com' target='_blank'>
                 Docs
               </MenuItem>
+              <MenuItem component={Link} href='https://' target='_blank'>
+                Support
+              </MenuItem>
             </Menu>
           </Toolbar>
         </AppBar>
@@ -185,24 +190,25 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
           <Divider />
           <List>
             <ListItem disablePadding>
-              {this.props.data.map((item: Project) => {
-                return (
-                  <TreeView
-                    aria-label='customized'
-                    defaultExpanded={['1']}
-                    defaultCollapseIcon={<IndeterminateCheckBoxIcon />}
-                    defaultExpandIcon={<AddBoxIcon />}
-                    defaultEndIcon={<DisabledByDefaultIcon />}
-                    sx={{ height: 264, flexGrow: 1, maxWidth: 400, overflowY: 'auto', py: 4, px: 1.5 }}
-                  >
-                    <TreeItem nodeId='1' label={item.projectName}>
-                      {item.tableList.map((table) => {
-                        return <TreeItem nodeId='2' label={table[0]} />;
-                      })}
-                    </TreeItem>
-                  </TreeView>
-                );
-              })}
+              <TreeView
+                aria-label='customized'
+                defaultExpanded={['1']}
+                defaultCollapseIcon={<IndeterminateCheckBoxIcon />}
+                defaultExpandIcon={<AddBoxIcon />}
+                defaultEndIcon={<DisabledByDefaultIcon />}
+                sx={{ height: 264, flexGrow: 1, maxWidth: 400, overflowY: 'auto', py: 4, px: 1.5 }}
+              >
+                <TreeItem nodeId='1' label={database.projectName}>
+                  {() => {
+                    const keys = Object.keys(database.tableList[0]);
+                    return <h2>awesome list of keys</h2>;
+                    // for (let i = 0; i < keys.length; i++) {
+                    //   const itemCount = i + 1;
+                    //   return <TreeItem nodeId={`${itemCount}`} label={keys[i]} />;
+                    // }
+                  }}
+                </TreeItem>
+              </TreeView>
             </ListItem>
           </List>
         </Drawer>
