@@ -1,6 +1,3 @@
-// Core Modules
-import { readFileSync } from 'fs';
-
 // NPM Modules
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import BusinessIcon from '@mui/icons-material/Business';
@@ -34,13 +31,11 @@ import {
 import * as React from 'react';
 
 // Custom Modules
-import logo from './../../../src/assets/img/logo/logo.png';
-import icon from './../../../src/assets/img/logo/icon.png';
-import DatabaseContext from './../../utils/context/database.context';
-
+import { Project } from './../../utils/smythdb-core/Project';
+import { TableOptions } from 'utils/smythdb-core/TableOptions';
 export interface PageProps {
   children: any;
-  data: any;
+  data: Project[];
   pageTitle: string;
 }
 
@@ -77,152 +72,145 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
   render() {
     return (
       <Box sx={{ display: 'flex' }}>
-        <DatabaseContext.Provider value={this.props.data}>
-          <CssBaseline />
-          <AppBar position='fixed' sx={{ width: `calc(100% - ${this.drawerWidth}px)`, ml: `${this.drawerWidth}px` }}>
-            <Toolbar className='box-header' sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Typography variant='h6' noWrap component='div'>
-                {this.props.pageTitle}
+        <CssBaseline />
+        <AppBar position='fixed' sx={{ width: `calc(100% - ${this.drawerWidth}px)`, ml: `${this.drawerWidth}px` }}>
+          <Toolbar className='box-header' sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Typography variant='h6' noWrap component='div'>
+              {this.props.pageTitle}
+            </Typography>
+            <Breadcrumbs
+              separator={<NavigateNextIcon fontSize='small' />}
+              aria-label='breadcrumb'
+              sx={{ color: 'white' }}
+            >
+              <Link underline='hover' sx={{ display: 'flex', alignItems: 'center' }} color='inherit' href='/'>
+                <BusinessIcon sx={{ mr: 0.5 }} fontSize='inherit' />
+                Organization
+              </Link>
+              <Link
+                underline='hover'
+                sx={{ display: 'flex', alignItems: 'center' }}
+                color='inherit'
+                href='/material-ui/getting-started/installation/'
+              >
+                <DatasetIcon sx={{ mr: 0.5 }} fontSize='inherit' />
+                Database
+              </Link>
+              <Typography sx={{ display: 'flex', alignItems: 'center' }}>
+                <TableViewIcon sx={{ mr: 0.5 }} fontSize='inherit' />
+                Table
               </Typography>
-              <Breadcrumbs
-                separator={<NavigateNextIcon fontSize='small' />}
-                aria-label='breadcrumb'
-                sx={{ color: 'white' }}
-              >
-                <Link underline='hover' sx={{ display: 'flex', alignItems: 'center' }} color='inherit' href='/'>
-                  <BusinessIcon sx={{ mr: 0.5 }} fontSize='inherit' />
-                  Organization
-                </Link>
-                <Link
-                  underline='hover'
-                  sx={{ display: 'flex', alignItems: 'center' }}
-                  color='inherit'
-                  href='/material-ui/getting-started/installation/'
-                >
-                  <DatasetIcon sx={{ mr: 0.5 }} fontSize='inherit' />
-                  Database
-                </Link>
-                <Typography sx={{ display: 'flex', alignItems: 'center' }}>
-                  <TableViewIcon sx={{ mr: 0.5 }} fontSize='inherit' />
-                  Table
-                </Typography>
-              </Breadcrumbs>
-              <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-                <Tooltip title='DataSmyth Details'>
-                  <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-                    <IconButton
-                      id='avatar-icon'
-                      onClick={() => this.handleAccountMenuClick()}
-                      size='small'
-                      sx={{ ml: 2 }}
-                      aria-controls={this.state.isMenuOpen ? 'account-menu' : undefined}
-                      aria-haspopup='true'
-                      aria-expanded={this.state.isMenuOpen ? 'true' : undefined}
-                    >
-                      <Avatar src='assets/img/icon.png' />
-                    </IconButton>
-                  </Box>
-                </Tooltip>
-              </Box>
-              <Menu
-                anchorEl={this.state.anchorEl}
-                id='account-menu'
-                open={this.state.isMenuOpen}
-                onClose={() => this.handleAccountMenuClick()}
-                onClick={() => this.handleAccountMenuClick()}
-                PaperProps={{
-                  elevation: 0,
-                  sx: {
-                    backgroundColor: 'white',
-                    overflow: 'visible',
-                    filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                    mt: 1.5,
-                    '& .MuiAvatar-root': {
-                      width: 32,
-                      height: 32,
-                      ml: -0.5,
-                      mr: 1
-                    },
-                    '&:before': {
-                      content: '""',
-                      display: 'block',
-                      position: 'absolute',
-                      top: 0,
-                      right: 14,
-                      width: 10,
-                      height: 10,
-                      bgcolor: 'background.paper',
-                      transform: 'translateY(-50%) rotate(45deg)',
-                      zIndex: 0
-                    }
+            </Breadcrumbs>
+            <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+              <Tooltip title='DataSmyth Details'>
+                <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+                  <IconButton
+                    id='avatar-icon'
+                    onClick={() => this.handleAccountMenuClick()}
+                    size='small'
+                    sx={{ ml: 2 }}
+                    aria-controls={this.state.isMenuOpen ? 'account-menu' : undefined}
+                    aria-haspopup='true'
+                    aria-expanded={this.state.isMenuOpen ? 'true' : undefined}
+                  >
+                    <Avatar src='assets/img/icon.png' />
+                  </IconButton>
+                </Box>
+              </Tooltip>
+            </Box>
+            <Menu
+              anchorEl={this.state.anchorEl}
+              id='account-menu'
+              open={this.state.isMenuOpen}
+              onClose={() => this.handleAccountMenuClick()}
+              onClick={() => this.handleAccountMenuClick()}
+              PaperProps={{
+                elevation: 0,
+                sx: {
+                  backgroundColor: 'white',
+                  overflow: 'visible',
+                  filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                  mt: 1.5,
+                  '& .MuiAvatar-root': {
+                    width: 32,
+                    height: 32,
+                    ml: -0.5,
+                    mr: 1
+                  },
+                  '&:before': {
+                    content: '""',
+                    display: 'block',
+                    position: 'absolute',
+                    top: 0,
+                    right: 14,
+                    width: 10,
+                    height: 10,
+                    bgcolor: 'background.paper',
+                    transform: 'translateY(-50%) rotate(45deg)',
+                    zIndex: 0
                   }
-                }}
-                transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-              >
-                <MenuItem component={Link} href='https://datasmyth.com' target='_blank'>
-                  DataSmyth Website
-                </MenuItem>
-                <Divider />
-                <MenuItem component={Link} href='https://datasmyth.com' target='_blank'>
-                  Docs
-                </MenuItem>
-              </Menu>
-            </Toolbar>
-          </AppBar>
-          <Drawer
-            sx={{
-              height: '100vh',
+                }
+              }}
+              transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+              anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+            >
+              <MenuItem component={Link} href='https://datasmyth.com' target='_blank'>
+                DataSmyth Website
+              </MenuItem>
+              <Divider />
+              <MenuItem component={Link} href='https://datasmyth.com' target='_blank'>
+                Docs
+              </MenuItem>
+            </Menu>
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          sx={{
+            height: '100vh',
+            width: this.drawerWidth,
+            flexShrink: 0,
+            '& .MuiDrawer-paper': {
               width: this.drawerWidth,
-              flexShrink: 0,
-              '& .MuiDrawer-paper': {
-                width: this.drawerWidth,
-                boxSizing: 'border-box'
-              }
-            }}
-            variant='permanent'
-            anchor='left'
-          >
-            <Toolbar>
-              <ImageListItem sx={{ width: '100%', paddingTop: '10px' }}>
-                <img src='assets/img/logo.png' alt='DataSmyth Logo' loading='lazy' />
-              </ImageListItem>
-            </Toolbar>
-            <Divider />
-            <List>
-              <ListItem disablePadding>
-                <TreeView
-                  aria-label='customized'
-                  defaultExpanded={['1']}
-                  defaultCollapseIcon={<IndeterminateCheckBoxIcon />}
-                  defaultExpandIcon={<AddBoxIcon />}
-                  defaultEndIcon={<DisabledByDefaultIcon />}
-                  sx={{ height: 264, flexGrow: 1, maxWidth: 400, overflowY: 'auto', py: 4, px: 1.5 }}
-                >
-                  <TreeItem nodeId='1' label='Main'>
-                    <TreeItem nodeId='2' label='Hello' />
-                    <TreeItem nodeId='3' label='Subtree with children'>
-                      <TreeItem nodeId='6' label='Hello' />
-                      <TreeItem nodeId='7' label='Sub-subtree with children'>
-                        <TreeItem nodeId='9' label='Child 1' />
-                        <TreeItem nodeId='10' label='Child 2' />
-                        <TreeItem nodeId='11' label='Child 3' />
-                      </TreeItem>
-                      <TreeItem nodeId='8' label='Hello' />
+              boxSizing: 'border-box'
+            }
+          }}
+          variant='permanent'
+          anchor='left'
+        >
+          <Toolbar>
+            <ImageListItem sx={{ width: '100%', paddingTop: '10px' }}>
+              <img src='assets/img/logo.png' alt='DataSmyth Logo' loading='lazy' />
+            </ImageListItem>
+          </Toolbar>
+          <Divider />
+          <List>
+            <ListItem disablePadding>
+              {this.props.data.map((item: Project) => {
+                return (
+                  <TreeView
+                    aria-label='customized'
+                    defaultExpanded={['1']}
+                    defaultCollapseIcon={<IndeterminateCheckBoxIcon />}
+                    defaultExpandIcon={<AddBoxIcon />}
+                    defaultEndIcon={<DisabledByDefaultIcon />}
+                    sx={{ height: 264, flexGrow: 1, maxWidth: 400, overflowY: 'auto', py: 4, px: 1.5 }}
+                  >
+                    <TreeItem nodeId='1' label={item.projectName}>
+                      {item.tableList.map((table) => {
+                        return <TreeItem nodeId='2' label={table[0]} />;
+                      })}
                     </TreeItem>
-                    <TreeItem nodeId='4' label='World' />
-                    <TreeItem nodeId='5' label='Something something' />
-                  </TreeItem>
-                </TreeView>
-              </ListItem>
-            </List>
-          </Drawer>
-          <Grid container>
-            <Grid item xs={10} sx={{ marginLeft: 'auto', marginRight: 'auto' }}>
-              {this.props.children}
-            </Grid>
+                  </TreeView>
+                );
+              })}
+            </ListItem>
+          </List>
+        </Drawer>
+        <Grid container>
+          <Grid item xs={10} sx={{ marginLeft: 'auto', marginRight: 'auto' }}>
+            {this.props.children}
           </Grid>
-        </DatabaseContext.Provider>
+        </Grid>
       </Box>
     );
   }
