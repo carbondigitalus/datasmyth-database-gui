@@ -10,19 +10,20 @@ import Typography from '@mui/material/Typography';
 // Custom Modules
 import PortalTemplate from 'components/templates/portal.template';
 import { Project } from 'utils/smythdb-core/Project';
+import database from './../database/database.json';
 
 interface PageProps {
-  data: Project[];
+  data: any;
 }
 
-export function getStaticProps(context) {
-  const file = `${process.cwd()}/src/database/database.json`;
-  const database = fs.readFileSync(file, 'utf-8');
-  const project: Project[] = JSON.parse(database);
-  console.log('database\n', project);
+export async function getStaticProps(context) {
+  // const file = `${process.cwd()}/src/database/database.json`;
+  // const database = await fs.readFileSync(file, 'utf-8');
+  // const project = JSON.parse(database) as Project[];
+  // console.log('database\n', database);
 
   return {
-    props: { data: project }
+    props: { data: database }
   };
 }
 
@@ -33,7 +34,7 @@ export default class IndexPage extends React.Component<PageProps> {
 
   render() {
     return (
-      <PortalTemplate pageTitle='Dashboard' data={this.props.data}>
+      <PortalTemplate pageTitle='Dashboard' data={database}>
         <Box component='main' sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
           <Toolbar />
           <Typography paragraph>
@@ -46,7 +47,7 @@ export default class IndexPage extends React.Component<PageProps> {
             Cras tincidunt lobortis feugiat vivamus at augue. At augue eget arcu dictum varius duis at consectetur
             lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien faucibus et molestie ac.
           </Typography>
-          <Typography paragraph>{this.props.data}</Typography>
+          <Typography paragraph>{database.projectName}</Typography>
         </Box>
       </PortalTemplate>
     );
