@@ -9,19 +9,20 @@ import Typography from '@mui/material/Typography';
 
 // Custom Modules
 import PortalTemplate from 'components/templates/portal.template';
-import DatabaseContext from 'utils/context/database.context';
+import { Project } from 'utils/smythdb-core/Project';
 
 interface PageProps {
-  data: any;
+  data: Project[];
 }
 
 export function getStaticProps(context) {
   const file = `${process.cwd()}/src/database/database.json`;
   const database = fs.readFileSync(file, 'utf-8');
-  console.log('database\n', database);
+  const project: Project[] = JSON.parse(database);
+  console.log('database\n', project);
 
   return {
-    props: { data: database }
+    props: { data: project }
   };
 }
 
