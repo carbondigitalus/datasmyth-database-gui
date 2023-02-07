@@ -1,99 +1,101 @@
-{
-  "projectName": "MyTacoFund",
-  "databaseType": "PostgreSQL",
-  "projectNotes": "",
-  "enumList": [
-    {
-      "name": "EnumAccountRole",
-      "options": ["employeeAdmin", "employeeSuperAdmin", "creator", "supporter"]
-    },
+[
+  {
+    "projectName": "MyTacoFund",
+    "databaseType": "PostgreSQL",
+    "projectNotes": "",
+    "enumList": [
+      {
+        "name": "EnumAccountRole",
+        "options": ["employeeAdmin", "employeeSuperAdmin", "creator", "supporter"]
+      },
 
-    {
-      "name": "EnumAccountStatus",
-      "options": ["active", "archvied", "hold", "inactive"]
-    },
+      {
+        "name": "EnumAccountStatus",
+        "options": ["active", "archvied", "hold", "inactive"]
+      },
 
-    {
-      "name": "EnumProductType",
-      "options": ["single", "subscription"]
-    }
-  ],
-  "tableList": [
-    {
-      "_name": "account",
-      "_id": {
-        "type": "uuid",
-        "primaryKey": true
-      },
-      "firstName": { "type": "text", "nullable": false },
-      "lastName": { "type": "text", "nullable": false },
-      "email": { "type": "text", "unique": true, "nullable": false },
-      "phone": { "type": "text" },
-      "password": { "type": "text" },
-      "address": { "type": "jsonb", "nullable": true, "default": null },
-      "socialProfiles": { "type": "jsonb", "nullable": true, "default": null },
-      "accountRole": { "type": "enum", "enumDefined": "EnumAccountRole", "default": "supporter" },
-      "accountStatus": { "type": "enum", "enumDefined": "EnumAccountStatus", "default": "active" },
-      "accountVerified": { "type": "jsonb", "nullable": true, "default": null },
-      "isActive": { "type": "boolean", "default": true },
-      "passwordChangedAt": { "type": "date", "nullable": true, "default": null },
-      "passwordResetToken": { "type": "text", "nullable": true, "default": null },
-      "passwordResetExpires": { "type": "date", "nullable": true, "default": null },
-      "recordCreated": { "type": "timestamp", "default": "new Date.now()" },
-      "recordUpdated": { "type": "timestamp", "nullable": true, "default": null },
-      "productList": {
-        "type": "jsonb",
-        "ref": {
-          "refType": "<",
-          "refField": "products.id"
-        }
+      {
+        "name": "EnumProductType",
+        "options": ["single", "subscription"]
       }
-    },
-    {
-      "_name": "products",
-      "_id": {
-        "type": "uuid",
-        "primaryKey": true
-      },
-      "title": { "type": "text", "nullable": false },
-      "image": { "type": "text", "nullable": false },
-      "description": { "type": "text" },
-      "productType": { "type": "enum", "enumDefined": "EnumProductType", "default": "single" },
-      "priceUnit": { "type": "int", "nullable": false, "default": 5 },
-      "recordCreated": { "type": "timestamp", "default": "new Date.now()" },
-      "recordUpdated": { "type": "timestamp", "nullable": true, "default": null },
-      "accountID": {
-        "type": "uuid",
-        "ref": {
-          "refType": ">",
-          "refField": "account.id"
-        }
-      }
-    },
-    {
-      "_name": "orders",
-      "_id": {
-        "type": "uuid",
-        "primaryKey": true
-      },
-      "customerID": {
-        "type": "uuid",
-        "ref": {
-          "refType": "<>",
-          "refField": "account.id"
+    ],
+    "tableList": [
+      {
+        "name": "account",
+        "id": {
+          "type": "uuid",
+          "primaryKey": true
         },
-        "default": null
-      },
-      "productID": {
-        "type": "uuid",
-        "ref": {
-          "refType": "<>",
-          "refField": "products.id"
+        "firstName": { "type": "text", "nullable": false },
+        "lastName": { "type": "text", "nullable": false },
+        "email": { "type": "text", "unique": true, "nullable": false },
+        "phone": { "type": "text" },
+        "password": { "type": "text" },
+        "address": { "type": "jsonb", "nullable": true, "default": null },
+        "socialProfiles": { "type": "jsonb", "nullable": true, "default": null },
+        "accountRole": { "type": "enum", "enumDefined": "EnumAccountRole", "default": "supporter" },
+        "accountStatus": { "type": "enum", "enumDefined": "EnumAccountStatus", "default": "active" },
+        "accountVerified": { "type": "jsonb", "nullable": true, "default": null },
+        "isActive": { "type": "boolean", "default": true },
+        "passwordChangedAt": { "type": "date", "nullable": true, "default": null },
+        "passwordResetToken": { "type": "text", "nullable": true, "default": null },
+        "passwordResetExpires": { "type": "date", "nullable": true, "default": null },
+        "recordCreated": { "type": "timestamp", "default": "new Date.now()" },
+        "recordUpdated": { "type": "timestamp", "nullable": true, "default": null },
+        "productList": {
+          "type": "jsonb",
+          "ref": {
+            "refType": "<",
+            "refField": "products.id"
+          }
         }
       },
-      "totalCost": { "type": "int", "nullable": false, "default": 0 },
-      "recordCreated": { "type": "timestamp", "default": "new Date.now()" },
-      "recordUpdated": { "type": "timestamp", "nullable": true, "default": null }
-    }
-  ]
-}
+      {
+        "name": "products",
+        "id": {
+          "type": "uuid",
+          "primaryKey": true
+        },
+        "title": { "type": "text", "nullable": false },
+        "image": { "type": "text", "nullable": false },
+        "description": { "type": "text" },
+        "productType": { "type": "enum", "enumDefined": "EnumProductType", "default": "single" },
+        "priceUnit": { "type": "int", "nullable": false, "default": 5 },
+        "recordCreated": { "type": "timestamp", "default": "new Date.now()" },
+        "recordUpdated": { "type": "timestamp", "nullable": true, "default": null },
+        "accountID": {
+          "type": "uuid",
+          "ref": {
+            "refType": ">",
+            "refField": "account.id"
+          }
+        }
+      },
+      {
+        "name": "orders",
+        "id": {
+          "type": "uuid",
+          "primaryKey": true
+        },
+        "customerID": {
+          "type": "uuid",
+          "ref": {
+            "refType": "<>",
+            "refField": "account.id"
+          },
+          "default": null
+        },
+        "productID": {
+          "type": "uuid",
+          "ref": {
+            "refType": "<>",
+            "refField": "products.id"
+          }
+        },
+        "totalCost": { "type": "int", "nullable": false, "default": 0 },
+        "recordCreated": { "type": "timestamp", "default": "new Date.now()" },
+        "recordUpdated": { "type": "timestamp", "nullable": true, "default": null }
+      }
+    ]
+  }
+]
