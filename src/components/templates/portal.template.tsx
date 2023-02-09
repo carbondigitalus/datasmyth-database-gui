@@ -10,6 +10,7 @@ import {
   Avatar,
   Box,
   Breadcrumbs,
+  Collapse,
   CssBaseline,
   Divider,
   Drawer,
