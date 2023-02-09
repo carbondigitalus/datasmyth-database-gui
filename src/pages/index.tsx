@@ -1,6 +1,3 @@
-// Core Modules
-import * as fs from 'fs';
-
 // NPM Modules
 import * as React from 'react';
 import Box from '@mui/material/Box';
