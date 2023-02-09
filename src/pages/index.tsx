@@ -13,11 +13,6 @@ interface PageProps {
 }
 
 export async function getStaticProps(context) {
-  // const file = `${process.cwd()}/src/database/database.json`;
-  // const database = await fs.readFileSync(file, 'utf-8');
-  // const project = JSON.parse(database) as Project[];
-  // console.log('database\n', database);
-
   return {
     props: { data: database }
   };
