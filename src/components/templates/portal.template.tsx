@@ -126,7 +126,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
               </Tooltip>
             </Box>
             <Menu
-              anchorEl={this.state.anchorEl}
+              anchorEl={this.state.avatarMenuElement}
               id='account-menu'
               open={this.state.isMenuOpen}
               onClose={() => this.handleAccountMenuClick()}
