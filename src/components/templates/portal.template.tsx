@@ -27,7 +27,6 @@ import {
 import * as React from 'react';
 
 // Custom Modules
-import DatabaseContext from 'utils/context/database.context';
 import database from './../../database/database.json';
 export interface PageProps {
   children: any;
