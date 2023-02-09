@@ -2,7 +2,6 @@
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import BusinessIcon from '@mui/icons-material/Business';
 import DatasetIcon from '@mui/icons-material/Dataset';
-import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefault';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import TableViewIcon from '@mui/icons-material/TableView';
