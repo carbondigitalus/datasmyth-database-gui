@@ -27,7 +27,6 @@ import {
 import * as React from 'react';
 
 // Custom Modules
-import { Project } from './../../utils/smythdb-core/Project';
 import { TableOptions } from 'utils/smythdb-core/TableOptions';
 import DatabaseContext from 'utils/context/database.context';
 import database from './../../database/database.json';
