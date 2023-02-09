@@ -42,6 +42,7 @@ export interface PageState {
   avatarMenuElement: HTMLElement | null;
   isAvatarMenuOpen: boolean;
   isTableListOpen: boolean;
+  tableListMenuElement: HTMLElement | null;
 }
 
 export default class PortalTemplate extends React.Component<PageProps, PageState> {
