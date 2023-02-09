@@ -207,7 +207,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
               <List component='div' disablePadding>
                 {database.tableList.map((item) => {
                   return (
-                    <ListItemButton key={`${item.id}`} sx={{ pl: 4 }}>
+                    <ListItemButton key={`${item.id}`} href={`/table/${slugify(item.name)}`} sx={{ pl: 4 }}>
                       <ListItemIcon>
                         <DatasetIcon />
                       </ListItemIcon>
