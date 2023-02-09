@@ -29,6 +29,7 @@ import {
   Typography
 } from '@mui/material';
 import * as React from 'react';
+import slugify from 'slugify';
 
 // Custom Modules
 import database from './../../database/database.json';
