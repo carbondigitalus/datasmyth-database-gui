@@ -67,6 +67,13 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
     }
   }
 
+  private handleTableListMenuClick() {
+    const element: HTMLElement = document.querySelector('#table-name');
+    if (this.state.isTableListOpen) {
+      return this.setState({ tableListMenuElement: null, isTableListOpen: false });
+    } else {
+      return this.setState({ tableListMenuElement: element, isTableListOpen: true });
+    }
   }
 
   render() {
