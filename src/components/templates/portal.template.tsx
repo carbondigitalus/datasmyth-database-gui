@@ -116,7 +116,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
                     onClick={() => this.handleAccountMenuClick()}
                     size='small'
                     sx={{ ml: 2 }}
-                    aria-controls={this.state.isMenuOpen ? 'account-menu' : undefined}
+                    aria-controls={this.state.isAvatarMenuOpen ? 'account-menu' : undefined}
                     aria-haspopup='true'
                     aria-expanded={this.state.isMenuOpen ? 'true' : undefined}
                   >
