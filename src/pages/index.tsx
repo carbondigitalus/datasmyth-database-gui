@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import PortalTemplate from 'components/templates/portal.template';
 import database from './../database/database.json';
 import Grid from '@mui/material/Grid';
+import { Paper } from '@mui/material';
 
 interface PageProps {
   data: any;
