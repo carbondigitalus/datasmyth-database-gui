@@ -31,17 +31,34 @@ export default class IndexPage extends React.Component<PageProps> {
       <PortalTemplate pageTitle='Dashboard' data={database}>
         <Box component='main' sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
           <Toolbar />
-          <Typography paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Risus at ultrices mi
-            tempus imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus. Convallis convallis tellus id
-            interdum velit laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl
-            suscipit adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras. Metus
-            vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis imperdiet massa tincidunt.
-            Cras tincidunt lobortis feugiat vivamus at augue. At augue eget arcu dictum varius duis at consectetur
-            lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien faucibus et molestie ac.
-          </Typography>
-          <Typography paragraph>{database.projectName}</Typography>
+          <Toolbar />
+          <Paper elevation={3} sx={{ p: 5 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <Typography variant='h3'>Project Name: {database.projectName}</Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography variant='h6'>Database Type: {database.databaseType}</Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography variant='h6'>Markdown Notes:</Typography>
+                <Paper elevation={3} sx={{ p: 5, backgroundColor: 'rgba(0,0,0,0.1)' }}>
+                  {database.projectNotes}
+                </Paper>
+              </Grid>
+            </Grid>
+          </Paper>
+          <Toolbar />
+          <Paper elevation={3} sx={{ p: 5 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={4}>
+                <DatasetIcon sx={{ fontSize: '48px' }} />
+                <Typography paragraph sx={{ fontSize: '32px' }}>
+                  Tables: {database.tableList.length}
+                </Typography>
+              </Grid>
+            </Grid>
+          </Paper>
         </Box>
       </PortalTemplate>
     );
