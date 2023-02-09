@@ -50,11 +50,14 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
 
   constructor(props: PageProps) {
     super(props);
-    this.state = { anchorEl: null, isMenuOpen: false };
-  }
-
   private closeAccountMenu() {
     return this.setState({ anchorEl: null, isMenuOpen: false });
+    this.state = {
+      avatarMenuElement: null,
+      isAvatarMenuOpen: false,
+      isTableListOpen: true,
+      tableListMenuElement: null
+    };
   }
 
   private handleAccountMenuClick() {
