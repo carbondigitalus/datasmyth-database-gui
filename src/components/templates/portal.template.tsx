@@ -95,12 +95,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
                 <BusinessIcon sx={{ mr: 0.5 }} fontSize='inherit' />
                 {database.projectName}
               </Link>
-              <Link
-                underline='hover'
-                sx={{ display: 'flex', alignItems: 'center' }}
-                color='inherit'
-                href='/material-ui/getting-started/installation/'
-              >
+              <Link underline='hover' sx={{ display: 'flex', alignItems: 'center' }} color='inherit' href='/'>
                 <DatasetIcon sx={{ mr: 0.5 }} fontSize='inherit' />
                 {database.databaseType}
               </Link>
