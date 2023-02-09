@@ -59,10 +59,11 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
   }
 
   private handleAccountMenuClick() {
-    if (this.state.isMenuOpen) {
-      return this.closeAccountMenu();
+    const element: HTMLElement = document.querySelector('#avatar-icon');
+    if (this.state.isAvatarMenuOpen) {
+      return this.setState({ avatarMenuElement: null, isAvatarMenuOpen: false });
     } else {
-      return this.openAccountMenu();
+      return this.setState({ avatarMenuElement: element, isAvatarMenuOpen: true });
     }
   }
 
