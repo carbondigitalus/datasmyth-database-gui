@@ -169,7 +169,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
               <MenuItem component={Link} href='https://datasmyth.com' target='_blank'>
                 Docs
               </MenuItem>
-              <MenuItem component={Link} href='https://' target='_blank'>
+              <MenuItem component={Link} href='https://fortembr.com/support' target='_blank'>
                 Support
               </MenuItem>
             </Menu>
