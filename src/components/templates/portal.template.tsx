@@ -193,28 +193,29 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
             </ImageListItem>
           </Toolbar>
           <Divider />
-          <List>
-            <ListItem disablePadding>
-              <TreeView
-                aria-label='customized'
-                defaultExpanded={['1']}
-                defaultCollapseIcon={<IndeterminateCheckBoxIcon />}
-                defaultExpandIcon={<AddBoxIcon />}
-                defaultEndIcon={<DisabledByDefaultIcon />}
-                sx={{ height: 264, flexGrow: 1, maxWidth: 400, overflowY: 'auto', py: 4, px: 1.5 }}
-              >
-                <TreeItem nodeId='1' label={database.projectName}>
-                  {() => {
-                    const keys = Object.keys(database.tableList[0]);
-                    return <h2>awesome list of keys</h2>;
-                    // for (let i = 0; i < keys.length; i++) {
-                    //   const itemCount = i + 1;
-                    //   return <TreeItem nodeId={`${itemCount}`} label={keys[i]} />;
-                    // }
-                  }}
-                </TreeItem>
-              </TreeView>
-            </ListItem>
+          <List
+            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+            component='nav'
+            aria-labelledby='nested-list-subheader'
+          >
+            <ListItemButton id='table-name' onClick={() => this.handleTableListMenuClick()}>
+              <ListItemIcon>{this.state.isTableListOpen ? <IndeterminateCheckBoxIcon /> : <AddBoxIcon />}</ListItemIcon>
+              <ListItemText primary={database.projectName} />
+            </ListItemButton>
+            <Collapse in={this.state.isTableListOpen} timeout='auto' unmountOnExit>
+              <List component='div' disablePadding>
+                {database.tableList.map((item) => {
+                  return (
+                    <ListItemButton key={`${item.id}`} sx={{ pl: 4 }}>
+                      <ListItemIcon>
+                        <DatasetIcon />
+                      </ListItemIcon>
+                      <ListItemText primary={item.name} />
+                    </ListItemButton>
+                  );
+                })}
+              </List>
+            </Collapse>
           </List>
         </Drawer>
         <Grid container>
