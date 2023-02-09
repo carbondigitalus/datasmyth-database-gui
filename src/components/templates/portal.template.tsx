@@ -5,7 +5,6 @@ import DatasetIcon from '@mui/icons-material/Dataset';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import TableViewIcon from '@mui/icons-material/TableView';
-import TreeView from '@mui/lab/TreeView';
 import {
   AppBar,
   Avatar,
