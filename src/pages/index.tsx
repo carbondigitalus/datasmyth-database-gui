@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 
 // Custom Modules
 import PortalTemplate from 'components/templates/portal.template';
-import { Project } from 'utils/smythdb-core/Project';
 import database from './../database/database.json';
 
 interface PageProps {
