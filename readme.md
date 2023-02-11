@@ -44,7 +44,7 @@
 
 ## About The Project
 
-We needed a DB viewer tool for a project. In researching this tool, we found (DB Docs)[https://dbdocs.io]. While this tool was exactly what we were looking for, there was one feature missing, self-hosting the project. The security requirements of this project forced our hand on a need to self-host. So, we threw this together fairly quickly so that we've have an internal tool.
+We needed a DB viewer tool for a project. In researching this tool, we found [DB Docs](https://dbdocs.io). While this tool was exactly what we were looking for, there was one feature missing, self-hosting the project. The security requirements of this project forced our hand on a need to self-host. So, we threw this together fairly quickly so that we've have an internal tool.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
