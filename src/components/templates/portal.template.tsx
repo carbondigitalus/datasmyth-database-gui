@@ -82,7 +82,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
     return (
       <Box sx={{ display: 'flex' }}>
         <Head>
-          <title>{this.props.pageTitle} | DataSmyth</title>
+          <title>{`${this.props.pageTitle} | DataSmyth`}</title>
         </Head>
         <CssBaseline />
         <AppBar
