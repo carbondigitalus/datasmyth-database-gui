@@ -44,6 +44,21 @@ export async function getStaticPaths() {
 }
 
 class TableNamePage extends React.Component<PageProps> {
+  private settingCheck(column: ColumnOptions) {
+    let options: string[] = [];
+    if (column.nullable === true) {
+      options.push('nullable');
+    }
+    if (column.primaryKey) {
+      options.push('primary-key');
+    }
+    if (column.unique) {
+      options.push('unique');
+    }
+    return options.map((option) => {
+      return <Chip label={option} color='primary' variant='outlined' />;
+    });
+  }
 }
 
 export default withRouter(TableNamePage);
