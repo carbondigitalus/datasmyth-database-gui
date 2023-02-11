@@ -17,7 +17,7 @@
   </a>
   <h3 align="center">DataSmyth - Database Viewer</h3>
   <p align="center">
-    Fort Embr, under the DataSmyth brand, we had a requirement to use a DB viewer tool. We built this as a prototype for quick use in localhost.
+    DataSmyth is a Fort Embr brand/product. We had a requirement to use a DB viewer tool. We built this as a prototype for quick use in localhost.
     <br>
     <br>
     <a href="https://github.com/fortembr/datasmyth-database-viewer/issues" target="_blank">Bugs</a>
