@@ -1,4 +1,4 @@
 import { ColumnOptions } from './interfaces';
-export interface TableOptions {
+export default interface TableOptions {
   [key: string]: ColumnOptions;
 }
