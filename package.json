@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "author": {
-    "name": "Carbon Digital",
-    "email": "hello@carbondigital.us",
-    "url": "https://carbondigital.us/"
+    "name": "Fort Embr",
+    "email": "hello@fortembr.com",
+    "url": "https://fortembr.com/"
   },
   "scripts": {
     "start:dev": "next",
