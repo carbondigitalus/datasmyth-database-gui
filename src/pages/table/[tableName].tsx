@@ -46,3 +46,4 @@ export async function getStaticPaths() {
 class TableNamePage extends React.Component<PageProps> {
 }
 
+export default withRouter(TableNamePage);
