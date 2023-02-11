@@ -203,7 +203,9 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
             aria-labelledby='nested-list-subheader'
           >
             <ListItemButton id='table-name' onClick={() => this.handleTableListMenuClick()}>
-              <ListItemIcon>{this.state.isTableListOpen ? <IndeterminateCheckBoxIcon /> : <AddBoxIcon />}</ListItemIcon>
+              <ListItemIcon sx={{ color: '#000066' }}>
+                {this.state.isTableListOpen ? <IndeterminateCheckBoxIcon /> : <AddBoxIcon />}
+              </ListItemIcon>
               <ListItemText primary={database.projectName} sx={{ color: '#000066' }} />
             </ListItemButton>
             <Collapse in={this.state.isTableListOpen} timeout='auto' unmountOnExit>
