@@ -44,6 +44,9 @@ export async function getStaticPaths() {
 }
 
 class TableNamePage extends React.Component<PageProps> {
+  render() {
+    return (
+      <PortalTemplate pageTitle={this.pageURL.charAt(0).toUpperCase() + this.pageURL.slice(1)} data={this.props.data}>
         <Box component='main' sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
           <Toolbar />
           <Paper elevation={3} sx={{ p: 5, pb: 10 }}>
@@ -96,6 +99,9 @@ class TableNamePage extends React.Component<PageProps> {
             </TableContainer>
           </Paper>
         </Box>
+      </PortalTemplate>
+    );
+  }
   private settingCheck(column: ColumnOptions) {
     let options: string[] = [];
     if (column.nullable === true) {
