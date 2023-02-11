@@ -19,3 +19,5 @@ import { withRouter, NextRouter } from 'next/router';
 // Custom Modules
 import database from '../../database/database.json';
 import PortalTemplate from 'components/templates/portal.template';
+import { ColumnOptions } from 'utils/smythdb-core/interfaces';
+
