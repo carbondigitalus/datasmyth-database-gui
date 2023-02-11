@@ -10,8 +10,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/fortembr/datasmyth-database-viewer/">
-    <img src="_repo/logo-blue.png#gh-light-mode-only" alt="Logo" width="400" height="">
-    <img src="_repo/logo-blue.png#gh-dark-mode-only" alt="Logo" width="400" height="">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="_repo/logo-white.png">
+        <img src="_repo/logo-blue.png" alt="Logo" width="400" height="">
+    </picture>
   </a>
   <h3 align="center">DataSmyth - Database Viewer</h3>
   <p align="center">
