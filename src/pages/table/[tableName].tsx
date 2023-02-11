@@ -26,3 +26,9 @@ interface PageProps {
   router: NextRouter;
 }
 
+export async function getStaticProps(context) {
+  return {
+    props: { data: database }
+  };
+}
+
