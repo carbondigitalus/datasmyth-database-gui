@@ -85,7 +85,11 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
           <title>{this.props.pageTitle} | DataSmyth</title>
         </Head>
         <CssBaseline />
-        <AppBar position='fixed' sx={{ width: `calc(100% - ${this.drawerWidth}px)`, ml: `${this.drawerWidth}px` }}>
+        <AppBar
+          className='portal-topbar'
+          position='fixed'
+          sx={{ width: `calc(100% - ${this.drawerWidth}px)`, ml: `${this.drawerWidth}px`, backgroundColor: '#000066' }}
+        >
           <Toolbar className='box-header' sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Typography variant='h6' noWrap component='div'>
               {this.props.pageTitle}
