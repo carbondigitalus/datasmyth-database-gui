@@ -211,7 +211,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
                 {database.tableList.map((item) => {
                   return (
                     <ListItemButton key={`${item.id}`} href={`/table/${slugify(item.name)}`} sx={{ pl: 4 }}>
-                      <ListItemIcon>
+                      <ListItemIcon sx={{ color: '#000066' }}>
                         <DatasetIcon />
                       </ListItemIcon>
                       <ListItemText primary={item.name} />
