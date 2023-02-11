@@ -12,6 +12,7 @@ export interface ColumnOptions {
   primaryKey?: boolean;
   type: ColumnType;
   unique?: boolean;
+  ref?: ColumnReference;
   databaseColumnOptions?: {
     MySQL?: MySQLColumnOptions;
     PostgreSQL?: PostgreSQLColumnOptions;
