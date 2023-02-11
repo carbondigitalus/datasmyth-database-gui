@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material';
 
-const darkNavy = '#0B0B45';
+const darkNavy = '#000066';
 const white = '#fff';
 
 const customTheme = createTheme({
@@ -315,6 +315,7 @@ const customTheme = createTheme({
   },
   typography: {
     h1: {
+      color: darkNavy,
       fontSize: '4rem',
       fontWeight: '700',
       paddingBottom: '25px',
@@ -328,10 +329,18 @@ const customTheme = createTheme({
       padding: '20px',
       textAlign: 'left'
     },
-    h3: {},
-    h4: {},
-    h5: {},
-    h6: {},
+    h3: {
+      color: darkNavy
+    },
+    h4: {
+      color: darkNavy
+    },
+    h5: {
+      color: darkNavy
+    },
+    h6: {
+      color: darkNavy
+    },
     subtitle1: {},
     subtitle2: {},
     body1: {
