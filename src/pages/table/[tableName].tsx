@@ -32,3 +32,14 @@ export async function getStaticProps(context) {
   };
 }
 
+export async function getStaticPaths() {
+  const staticPathValues: any[] = database.tableList.map((item) => {
+    return { params: { tableName: item.name } };
+  });
+
+  return {
+    paths: staticPathValues,
+    fallback: true
+  };
+}
+
