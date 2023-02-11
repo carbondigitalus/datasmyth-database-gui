@@ -44,6 +44,8 @@ export async function getStaticPaths() {
 }
 
 class TableNamePage extends React.Component<PageProps> {
+  private pageURL = this.props.router.asPath.split('/table/')[1];
+
   constructor(props: PageProps) {
     super(props);
   }
