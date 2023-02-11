@@ -52,7 +52,10 @@ class TableNamePage extends React.Component<PageProps> {
 
   render() {
     return (
-      <PortalTemplate pageTitle={this.pageURL.charAt(0).toUpperCase() + this.pageURL.slice(1)} data={this.props.data}>
+      <PortalTemplate
+        pageTitle={`${this.pageURL.charAt(0).toUpperCase()}${this.pageURL.slice(1)}`}
+        data={this.props.data}
+      >
         <Box component='main' sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
           <Toolbar />
           <Paper elevation={3} sx={{ p: 5, pb: 10 }}>
