@@ -1,4 +1,5 @@
 // Custom Modules
+import { ColumnReference } from './ColumnReference';
 import { ColumnType } from './ColumnType';
 import { MySQLColumnOptions } from './databases/MySQLColumnOptions';
 import { PostgreSQLColumnOptions } from './databases/PostgreSQLColumnOptions';
