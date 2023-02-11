@@ -43,3 +43,6 @@ export async function getStaticPaths() {
   };
 }
 
+class TableNamePage extends React.Component<PageProps> {
+}
+
