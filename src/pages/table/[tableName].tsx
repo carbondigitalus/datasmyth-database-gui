@@ -44,6 +44,10 @@ export async function getStaticPaths() {
 }
 
 class TableNamePage extends React.Component<PageProps> {
+  constructor(props: PageProps) {
+    super(props);
+  }
+
   render() {
     return (
       <PortalTemplate pageTitle={this.pageURL.charAt(0).toUpperCase() + this.pageURL.slice(1)} data={this.props.data}>
