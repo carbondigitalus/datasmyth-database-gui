@@ -214,7 +214,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
                       <ListItemIcon sx={{ color: '#000066' }}>
                         <DatasetIcon />
                       </ListItemIcon>
-                      <ListItemText primary={item.name} />
+                      <ListItemText primary={item.name} sx={{ color: '#000066' }} />
                     </ListItemButton>
                   );
                 })}
