@@ -9,7 +9,7 @@ export interface ColumnOptions {
   enum?: string[];
   enumName?: string;
   nullable?: boolean;
-  primary?: boolean;
+  primaryKey?: boolean;
   type: ColumnType;
   unique?: boolean;
   databaseColumnOptions?: {
