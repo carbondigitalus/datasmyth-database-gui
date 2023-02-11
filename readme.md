@@ -10,7 +10,8 @@
 <br />
 <div align="center">
   <a href="https://github.com/fortembr/datasmyth-database-viewer/">
-    <img src="_repo/logo-blue.png" alt="Logo" width="400" height="">
+    <img src="_repo/logo-blue.png#gh-light-mode-only" alt="Logo" width="400" height="">
+    <img src="_repo/logo-blue.png#gh-dark-mode-only" alt="Logo" width="400" height="">
   </a>
   <h3 align="center">DataSmyth - Database Viewer</h3>
   <p align="center">
@@ -72,13 +73,14 @@ Coming Soon/ Considering:
 
 ## Usage
 
-Usage docs coming soon. Here are a couple of screenshots of what it looks like. 
+Usage docs coming soon. Here are a couple of screenshots of what it looks like.
 
 <img width="1618" alt="Screen Shot 2023-02-10 at 19 28 16" src="https://user-images.githubusercontent.com/57743183/218226292-126001d3-d5c0-4bc2-a584-c07b1b67162d.png">
 
 <img width="2102" alt="Screen Shot 2023-02-10 at 19 28 47" src="https://user-images.githubusercontent.com/57743183/218226301-72ad9eb9-4f9f-4b65-ba22-684670189123.png">
 
 ### JSON Data Example
+
 ```json
 {
   "projectName": "MyTacoFund",
@@ -179,7 +181,6 @@ Usage docs coming soon. Here are a couple of screenshots of what it looks like.
     }
   ]
 }
-
 ```
 
 <!--
