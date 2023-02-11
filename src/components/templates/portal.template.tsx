@@ -192,8 +192,8 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
           anchor='left'
         >
           <Toolbar>
-            <ImageListItem sx={{ width: '100%', paddingTop: '10px' }}>
               <img src='assets/img/logo.png' alt='DataSmyth Logo' loading='lazy' />
+            <ImageListItem sx={{ width: '100%', padding: '10px' }}>
             </ImageListItem>
           </Toolbar>
           <Divider />
