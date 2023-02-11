@@ -28,6 +28,7 @@ import {
   Tooltip,
   Typography
 } from '@mui/material';
+import Head from 'next/head';
 import * as React from 'react';
 import slugify from 'slugify';
 
