@@ -124,7 +124,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
                     aria-haspopup='true'
                     aria-expanded={this.state.isAvatarMenuOpen ? 'true' : undefined}
                   >
-                    <Avatar src='assets/img/icon.png' />
+                    <Avatar src='/assets/img/icon-white.png' />
                   </IconButton>
                 </Box>
               </Tooltip>
