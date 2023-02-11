@@ -17,3 +17,4 @@ import {
 import { withRouter, NextRouter } from 'next/router';
 
 // Custom Modules
+import database from '../../database/database.json';
