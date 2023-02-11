@@ -204,7 +204,7 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
           >
             <ListItemButton id='table-name' onClick={() => this.handleTableListMenuClick()}>
               <ListItemIcon>{this.state.isTableListOpen ? <IndeterminateCheckBoxIcon /> : <AddBoxIcon />}</ListItemIcon>
-              <ListItemText primary={database.projectName} />
+              <ListItemText primary={database.projectName} sx={{ color: '#000066' }} />
             </ListItemButton>
             <Collapse in={this.state.isTableListOpen} timeout='auto' unmountOnExit>
               <List component='div' disablePadding>
