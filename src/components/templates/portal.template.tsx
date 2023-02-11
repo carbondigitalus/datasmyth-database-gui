@@ -81,6 +81,9 @@ export default class PortalTemplate extends React.Component<PageProps, PageState
   render() {
     return (
       <Box sx={{ display: 'flex' }}>
+        <Head>
+          <title>{this.props.pageTitle} | DataSmyth</title>
+        </Head>
         <CssBaseline />
         <AppBar position='fixed' sx={{ width: `calc(100% - ${this.drawerWidth}px)`, ml: `${this.drawerWidth}px` }}>
           <Toolbar className='box-header' sx={{ display: 'flex', justifyContent: 'space-between' }}>
