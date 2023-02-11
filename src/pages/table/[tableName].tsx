@@ -44,6 +44,11 @@ export async function getStaticPaths() {
 }
 
 class TableNamePage extends React.Component<PageProps> {
+        <Box component='main' sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
+          <Toolbar />
+          <Paper elevation={3} sx={{ p: 5, pb: 10 }}>
+            <Typography variant='h3'>Table: {this.pageURL}</Typography>
+            <Toolbar />
             <TableContainer component={Paper}>
               <Table sx={{ minWidth: 700 }} aria-label='customized table'>
                 <TableHead>
@@ -89,6 +94,8 @@ class TableNamePage extends React.Component<PageProps> {
                 </TableBody>
               </Table>
             </TableContainer>
+          </Paper>
+        </Box>
   private settingCheck(column: ColumnOptions) {
     let options: string[] = [];
     if (column.nullable === true) {
